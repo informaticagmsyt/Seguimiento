@@ -2,13 +2,19 @@
 -- PostgreSQL database dump
 --
 
+-- Dumped from database version 9.6.17
+-- Dumped by pg_dump version 9.6.17
+
 SET statement_timeout = 0;
 SET lock_timeout = 0;
-SET client_encoding = 'SQL_ASCII';
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SELECT pg_catalog.set_config('search_path', '', false);
 SET check_function_bodies = false;
+SET xmloption = content;
 SET client_min_messages = warning;
+SET row_security = off;
 
 --
 -- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
@@ -29,7 +35,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: circuitos; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- Name: circuitos; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.circuitos (
@@ -42,7 +48,7 @@ CREATE TABLE public.circuitos (
 ALTER TABLE public.circuitos OWNER TO postgres;
 
 --
--- Name: estados; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- Name: estados; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.estados (
@@ -75,7 +81,7 @@ ALTER SEQUENCE public.estados_id_estado_seq OWNED BY public.estados.id_estado;
 
 
 --
--- Name: fuentes; Type: TABLE; Schema: public; Owner: admin; Tablespace: 
+-- Name: fuentes; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.fuentes (
@@ -86,10 +92,10 @@ CREATE TABLE public.fuentes (
 );
 
 
-ALTER TABLE public.fuentes OWNER TO admin;
+ALTER TABLE public.fuentes OWNER TO postgres;
 
 --
--- Name: fuentes_id_seq; Type: SEQUENCE; Schema: public; Owner: admin
+-- Name: fuentes_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.fuentes_id_seq
@@ -100,17 +106,17 @@ CREATE SEQUENCE public.fuentes_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.fuentes_id_seq OWNER TO admin;
+ALTER TABLE public.fuentes_id_seq OWNER TO postgres;
 
 --
--- Name: fuentes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: admin
+-- Name: fuentes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.fuentes_id_seq OWNED BY public.fuentes.id;
 
 
 --
--- Name: municipios; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- Name: municipios; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.municipios (
@@ -144,7 +150,7 @@ ALTER SEQUENCE public.municipios_id_municipio_seq OWNED BY public.municipios.id_
 
 
 --
--- Name: origen; Type: TABLE; Schema: public; Owner: admin; Tablespace: 
+-- Name: origen; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.origen (
@@ -153,10 +159,10 @@ CREATE TABLE public.origen (
 );
 
 
-ALTER TABLE public.origen OWNER TO admin;
+ALTER TABLE public.origen OWNER TO postgres;
 
 --
--- Name: origen_id_seq; Type: SEQUENCE; Schema: public; Owner: admin
+-- Name: origen_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.origen_id_seq
@@ -167,17 +173,17 @@ CREATE SEQUENCE public.origen_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.origen_id_seq OWNER TO admin;
+ALTER TABLE public.origen_id_seq OWNER TO postgres;
 
 --
--- Name: origen_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: admin
+-- Name: origen_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.origen_id_seq OWNED BY public.origen.id;
 
 
 --
--- Name: parroquias; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+-- Name: parroquias; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.parroquias (
@@ -211,7 +217,7 @@ ALTER SEQUENCE public.parroquias_id_parroquia_seq OWNED BY public.parroquias.id_
 
 
 --
--- Name: productos; Type: TABLE; Schema: public; Owner: admin; Tablespace: 
+-- Name: productos; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.productos (
@@ -220,10 +226,10 @@ CREATE TABLE public.productos (
 );
 
 
-ALTER TABLE public.productos OWNER TO admin;
+ALTER TABLE public.productos OWNER TO postgres;
 
 --
--- Name: productos_id_seq; Type: SEQUENCE; Schema: public; Owner: admin
+-- Name: productos_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.productos_id_seq
@@ -234,17 +240,17 @@ CREATE SEQUENCE public.productos_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.productos_id_seq OWNER TO admin;
+ALTER TABLE public.productos_id_seq OWNER TO postgres;
 
 --
--- Name: productos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: admin
+-- Name: productos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.productos_id_seq OWNED BY public.productos.id;
 
 
 --
--- Name: seguimiento; Type: TABLE; Schema: public; Owner: admin; Tablespace: 
+-- Name: seguimiento; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.seguimiento (
@@ -264,10 +270,10 @@ CREATE TABLE public.seguimiento (
 );
 
 
-ALTER TABLE public.seguimiento OWNER TO admin;
+ALTER TABLE public.seguimiento OWNER TO postgres;
 
 --
--- Name: seguimiento_id_seq; Type: SEQUENCE; Schema: public; Owner: admin
+-- Name: seguimiento_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.seguimiento_id_seq
@@ -278,17 +284,17 @@ CREATE SEQUENCE public.seguimiento_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.seguimiento_id_seq OWNER TO admin;
+ALTER TABLE public.seguimiento_id_seq OWNER TO postgres;
 
 --
--- Name: seguimiento_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: admin
+-- Name: seguimiento_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.seguimiento_id_seq OWNED BY public.seguimiento.id;
 
 
 --
--- Name: tasa_cambio; Type: TABLE; Schema: public; Owner: admin; Tablespace: 
+-- Name: tasa_cambio; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.tasa_cambio (
@@ -300,10 +306,10 @@ CREATE TABLE public.tasa_cambio (
 );
 
 
-ALTER TABLE public.tasa_cambio OWNER TO admin;
+ALTER TABLE public.tasa_cambio OWNER TO postgres;
 
 --
--- Name: tasa_cambio_id_seq; Type: SEQUENCE; Schema: public; Owner: admin
+-- Name: tasa_cambio_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.tasa_cambio_id_seq
@@ -314,17 +320,17 @@ CREATE SEQUENCE public.tasa_cambio_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.tasa_cambio_id_seq OWNER TO admin;
+ALTER TABLE public.tasa_cambio_id_seq OWNER TO postgres;
 
 --
--- Name: tasa_cambio_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: admin
+-- Name: tasa_cambio_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.tasa_cambio_id_seq OWNED BY public.tasa_cambio.id;
 
 
 --
--- Name: users; Type: TABLE; Schema: public; Owner: admin; Tablespace: 
+-- Name: users; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.users (
@@ -336,10 +342,10 @@ CREATE TABLE public.users (
 );
 
 
-ALTER TABLE public.users OWNER TO admin;
+ALTER TABLE public.users OWNER TO postgres;
 
 --
--- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: admin
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.users_id_seq
@@ -350,73 +356,73 @@ CREATE SEQUENCE public.users_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.users_id_seq OWNER TO admin;
+ALTER TABLE public.users_id_seq OWNER TO postgres;
 
 --
--- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: admin
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
 
 
 --
--- Name: id_estado; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: estados id_estado; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.estados ALTER COLUMN id_estado SET DEFAULT nextval('public.estados_id_estado_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: admin
+-- Name: fuentes id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.fuentes ALTER COLUMN id SET DEFAULT nextval('public.fuentes_id_seq'::regclass);
 
 
 --
--- Name: id_municipio; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: municipios id_municipio; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.municipios ALTER COLUMN id_municipio SET DEFAULT nextval('public.municipios_id_municipio_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: admin
+-- Name: origen id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.origen ALTER COLUMN id SET DEFAULT nextval('public.origen_id_seq'::regclass);
 
 
 --
--- Name: id_parroquia; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: parroquias id_parroquia; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.parroquias ALTER COLUMN id_parroquia SET DEFAULT nextval('public.parroquias_id_parroquia_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: admin
+-- Name: productos id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.productos ALTER COLUMN id SET DEFAULT nextval('public.productos_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: admin
+-- Name: seguimiento id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.seguimiento ALTER COLUMN id SET DEFAULT nextval('public.seguimiento_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: admin
+-- Name: tasa_cambio id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.tasa_cambio ALTER COLUMN id SET DEFAULT nextval('public.tasa_cambio_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: admin
+-- Name: users id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_id_seq'::regclass);
@@ -516,7 +522,7 @@ SELECT pg_catalog.setval('public.estados_id_estado_seq', 1, false);
 
 
 --
--- Data for Name: fuentes; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: fuentes; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.fuentes (id, origen_id, nombre, parroquia_id) FROM stdin;
@@ -540,7 +546,7 @@ COPY public.fuentes (id, origen_id, nombre, parroquia_id) FROM stdin;
 
 
 --
--- Name: fuentes_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
+-- Name: fuentes_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.fuentes_id_seq', 19, true);
@@ -1232,7 +1238,7 @@ SELECT pg_catalog.setval('public.municipios_id_municipio_seq', 1, false);
 
 
 --
--- Data for Name: origen; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: origen; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.origen (id, descripcion) FROM stdin;
@@ -1242,7 +1248,7 @@ COPY public.origen (id, descripcion) FROM stdin;
 
 
 --
--- Name: origen_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
+-- Name: origen_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.origen_id_seq', 1, false);
@@ -3542,7 +3548,7 @@ SELECT pg_catalog.setval('public.parroquias_id_parroquia_seq', 1, false);
 
 
 --
--- Data for Name: productos; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: productos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.productos (id, descripcion) FROM stdin;
@@ -3600,18 +3606,19 @@ COPY public.productos (id, descripcion) FROM stdin;
 27	PASTA ALIMENTICIA 1 KG
 28	ARROZ BLANCO DE MESA TIPO 1 1KG
 29	CARAOTA 1 KG
+59	\N
 \.
 
 
 --
--- Name: productos_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
+-- Name: productos_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.productos_id_seq', 58, true);
+SELECT pg_catalog.setval('public.productos_id_seq', 59, true);
 
 
 --
--- Data for Name: seguimiento; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: seguimiento; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.seguimiento (id, fecha, producto_id, precio, tasa, estado_id, municipio_id, circuito_id, parroquia_id, semana, id_origen, id_fuente, user_id) FROM stdin;
@@ -39995,7 +40002,6 @@ COPY public.seguimiento (id, fecha, producto_id, precio, tasa, estado_id, munici
 38393	2020-02-17 00:00:00	2	33000	73393	24	462	\N	1132	1	1	1	27
 38394	2020-05-30 00:00:00	23	1552000	198110	24	462	\N	1121	1	2	5	61
 38395	2020-03-14 00:00:00	39	149000	73668	24	462	\N	1126	1	1	1	28
-38396	2020-06-01 00:00:00	33	415000	198110	24	462	\N	1137	1	2	16	62
 38397	2020-03-13 00:00:00	42	75120	73668	24	462	\N	1128	1	1	1	17
 38398	2020-02-17 00:00:00	26	252000	73393	24	462	\N	1132	1	1	1	27
 38399	2020-02-15 00:00:00	8	270800	73582	24	462	\N	1138	1	1	1	75
@@ -43196,18 +43202,22 @@ COPY public.seguimiento (id, fecha, producto_id, precio, tasa, estado_id, munici
 41712	2020-06-02 00:00:00	27	180000	197794	24	462	\N	1137	1	2	15	63
 41713	2020-06-02 00:00:00	28	180000	197794	24	462	\N	1137	1	2	15	63
 41714	2020-06-02 00:00:00	29	240000	197794	24	462	\N	1137	1	2	15	63
+41715	2020-06-16 00:00:00	1	1111	203500	24	462	\N	1133	1	2	2	1
+41716	2020-06-20 00:00:00	30	290000	203000	24	462	\N	1137	1	2	4	1
+41717	2020-06-25 00:00:00	31	100000	202000	24	462	\N	1124	1	1	1	1
+41718	2020-06-25 00:00:00	31	90000	202000	24	462	\N	1132	1	2	10	1
 \.
 
 
 --
--- Name: seguimiento_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
+-- Name: seguimiento_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.seguimiento_id_seq', 41714, true);
+SELECT pg_catalog.setval('public.seguimiento_id_seq', 41718, true);
 
 
 --
--- Data for Name: tasa_cambio; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: tasa_cambio; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.tasa_cambio (id, fecha, tasa, moneda, fuente) FROM stdin;
@@ -43485,19 +43495,26 @@ COPY public.tasa_cambio (id, fecha, tasa, moneda, fuente) FROM stdin;
 290	2020-06-01	195923	USD	MONITOR
 291	2020-06-02	197794	USD	BCV
 292	2020-06-02	193834	USD	MONITOR
-293	2020-06-03	195607	USD	MONITOR
+293	2020-06-03	195666	USD	MONITOR
+295	2020-06-03	192666	USD	MONITOR
+298	2020-06-16	203000	USD	MONITOR
+299	2020-06-16	203500	USD	BCV
+300	2020-06-20	203000	USD	BCV
+301	2020-06-20	202000	USD	MONITOR
+302	2020-06-25	202000	USD	BCV
+303	2020-06-25	208000	USD	MONITOR
 \.
 
 
 --
--- Name: tasa_cambio_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
+-- Name: tasa_cambio_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.tasa_cambio_id_seq', 293, true);
+SELECT pg_catalog.setval('public.tasa_cambio_id_seq', 303, true);
 
 
 --
--- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.users (id, usuario, clave, activo, perfil) FROM stdin;
@@ -43549,7 +43566,6 @@ COPY public.users (id, usuario, clave, activo, perfil) FROM stdin;
 28	fcabrera	23690293	t	transcriptor
 29	fgutierrez	25513960	t	transcriptor
 53	alucena	12345	t	tasa
-52	alucesa	12345	t	monitor
 2	jhonatan	603015	t	monitor
 54	lcanelon	27467643	t	transcriptor
 55	ialpino	17440898	t	transcriptor
@@ -43576,18 +43592,24 @@ COPY public.users (id, usuario, clave, activo, perfil) FROM stdin;
 73	MOjhofran	203010	t	monitor
 74	MDARRIOJA	9013	t	monitor
 75	gdelgado	18330079	t	transcriptor
+52	talucena	12345	t	monitor
+81	test	test	t	transcriptor
+82	test1	6576575	t	transcriptor
+80	teste	fdgfdg	t	transcriptor
+79	\N	1	t	administrador
+78	spike	1	t	monitor
 \.
 
 
 --
--- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.users_id_seq', 75, true);
+SELECT pg_catalog.setval('public.users_id_seq', 82, true);
 
 
 --
--- Name: idsg; Type: CONSTRAINT; Schema: public; Owner: admin; Tablespace: 
+-- Name: seguimiento idsg; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.seguimiento
@@ -43595,7 +43617,7 @@ ALTER TABLE ONLY public.seguimiento
 
 
 --
--- Name: idtc; Type: CONSTRAINT; Schema: public; Owner: admin; Tablespace: 
+-- Name: tasa_cambio idtc; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.tasa_cambio
@@ -43603,7 +43625,7 @@ ALTER TABLE ONLY public.tasa_cambio
 
 
 --
--- Name: ipkfuente; Type: CONSTRAINT; Schema: public; Owner: admin; Tablespace: 
+-- Name: fuentes ipkfuente; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.fuentes
@@ -43611,7 +43633,7 @@ ALTER TABLE ONLY public.fuentes
 
 
 --
--- Name: opkorg; Type: CONSTRAINT; Schema: public; Owner: admin; Tablespace: 
+-- Name: origen opkorg; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.origen
@@ -43619,7 +43641,7 @@ ALTER TABLE ONLY public.origen
 
 
 --
--- Name: opkp; Type: CONSTRAINT; Schema: public; Owner: admin; Tablespace: 
+-- Name: productos opkp; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.productos
@@ -43627,7 +43649,7 @@ ALTER TABLE ONLY public.productos
 
 
 --
--- Name: pkc; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- Name: circuitos pkc; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.circuitos
@@ -43635,21 +43657,11 @@ ALTER TABLE ONLY public.circuitos
 
 
 --
--- Name: pkuser; Type: CONSTRAINT; Schema: public; Owner: admin; Tablespace: 
+-- Name: users pkuser; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.users
     ADD CONSTRAINT pkuser PRIMARY KEY (id);
-
-
---
--- Name: SCHEMA public; Type: ACL; Schema: -; Owner: postgres
---
-
-REVOKE ALL ON SCHEMA public FROM PUBLIC;
-REVOKE ALL ON SCHEMA public FROM postgres;
-GRANT ALL ON SCHEMA public TO postgres;
-GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
 --
