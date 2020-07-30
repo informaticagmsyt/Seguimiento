@@ -11,6 +11,7 @@ class SeguimientoController extends CI_Controller
 
 		$this->load->model('Seguimiento');
 		$this->load->library('session');
+		$this->load->library('export_excel');
 	}
 
 	public function index()
@@ -303,5 +304,10 @@ class SeguimientoController extends CI_Controller
 		->set_content_type('application/json')
 		->set_output(json_encode($productos ));
 
+	}
+
+	public function exportarExcel(){
+		$result = $this->Seguimiento->listar();
+		$this->export_excel->to_excel($result, 'Listado_Precio_Productos');
 	}
 }

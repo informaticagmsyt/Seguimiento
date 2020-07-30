@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/seguimiento';
+$config['base_url'] = 'http://localhost/SeguimientoPrecios';
 //$config['base_url'] = 'http://ccsproductiva.caracas.gob.ve:8069/';
 //http://ec2-3-133-103-196.us-east-2.compute.amazonaws.com/seguimiento
 /*

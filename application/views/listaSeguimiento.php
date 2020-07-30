@@ -51,13 +51,13 @@
     <div class="ibox-head">
         <div class="ibox-title">Productos - Precio</div>
         <?php
-            if(isset($_GET['desde'] ) != null){
+            //if(isset($_GET['desde'] ) != null){
         ?>
-        <a href="../excel.php?datos=<?php echo $_GET['desde'];?>">
+        <a href="<?php echo base_url();?>index.php/SeguimientoController/exportarExcel <?php //echo $_GET['desde'];?> ">
             <button class="btn btn-primary">Exportar Excel</button>
         </a>
         <?php
-            }
+           // }
         ?>
     </div>
     <div class="ibox-body">
