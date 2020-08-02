@@ -656,4 +656,28 @@ class Seguimiento extends CI_Model
 
         return  $data;
     }
+
+    public function allSeguimientoReporte($desde, $hasta)
+    {
+
+        $this->db->select("distinct(seguimiento.id), precio,productos.descripcion as producto,origen.descripcion as origen,parroquias.parroquia,fuentes.nombre as fuente, to_char(seguimiento.fecha, 'DD-MM-YY') as fecha,usuario");
+
+
+
+        $this->db->from('seguimiento');
+        $this->db->join('productos', 'producto_id=productos.id', 'inner');
+        $this->db->join('parroquias', 'id_parroquia=parroquia_id', 'inner');
+        $this->db->join('origen', 'origen.id=id_origen', 'inner');
+        $this->db->join('fuentes', 'id_fuente=fuentes.id', 'inner');
+        $this->db->join('users', 'users.id=user_id', 'inner');
+        $this->db->where('seguimiento.fecha >=', $desde . " 00:00:00");
+
+        $this->db->where('seguimiento.fecha <=', $hasta . " 23:59:00");
+     
+        return $this->db->get();
+   
+      
+
+    }
+
 }

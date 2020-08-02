@@ -307,7 +307,12 @@ class SeguimientoController extends CI_Controller
 	}
 
 	public function exportarExcel(){
-		$result = $this->Seguimiento->listar();
-		$this->export_excel->to_excel($result, 'Listado_Precio_Productos');
+
+		$desde=$_GET['desde'];
+		$hasta=$_GET['hasta'];
+
+	$data=$this->Seguimiento->allSeguimientoReporte($desde,$hasta);
+	
+		$this->export_excel->to_excel($data, 'Listado_Precio_Productos');
 	}
 }
