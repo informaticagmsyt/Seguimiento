@@ -313,6 +313,6 @@ class SeguimientoController extends CI_Controller
 
 	$data=$this->Seguimiento->allSeguimientoReporte($desde,$hasta);
 	
-		$this->export_excel->to_excel($data, 'Listado_Precio_Productos');
+		$this->export_excel->to_excel($data, 'Listado_Precio_Productos_'.$desde.'_'.$hasta);
 	}
 }
