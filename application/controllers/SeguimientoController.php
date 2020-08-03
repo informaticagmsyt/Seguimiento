@@ -307,7 +307,9 @@ class SeguimientoController extends CI_Controller
 	}
 
 	public function exportarExcel(){
-
+		ini_set('max_execution_time', 2400);
+			set_time_limit(2400);
+		ini_set('memory_limit', '256M');
 		$desde=$_GET['desde'];
 		$hasta=$_GET['hasta'];
 
