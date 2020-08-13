@@ -611,9 +611,9 @@ class Seguimiento extends CI_Model
         $this->db->where('seguimiento.fecha >=', $desde . " 00:00:00");
 
         $this->db->where('seguimiento.fecha <=', $hasta . " 23:59:00");
-        /*if($_SESSION["perfil"]=="transcriptor"){ 
+        if($_SESSION["perfil"]=="transcriptor"){ /*validar que los datos que se visualicen correspondan a el usuario logueado*/
             $this->db->where('seguimiento.user_id', $_SESSION["user_id"]);
-        }*/
+        }
         
         $query = $this->db->get();
         $data = $query->result();
