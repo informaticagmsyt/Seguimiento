@@ -116,3 +116,53 @@
               </div>
             </div>
           </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="modalexportar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                  <form action="<?php echo base_url(); ?>index.php/SeguimientoController/exportarExcel" method="get">
+              
+                      <div class="modal-content">
+              
+                          <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Seleccione un Rango</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">          
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                              <div class="row">
+                                  <div class="col">
+              
+                                      <div class="input-group ">
+              
+                                          <span class="input-group-addon bg-white  ">
+                                              Desde </span>
+                                          <vuejs-datepicker :input-class="' date'" :value="fecha1" :language="es" v-model="desde"></vuejs-datepicker>
+              
+                                      </div>
+                                  </div>
+              
+              
+                                  <div class="col">
+              
+                                      <div class="input-group ">
+              
+                                          <span class="input-group-addon bg-white  ">
+                                              Hasta </span>
+                                          <vuejs-datepicker :input-class="' date'" :value="fecha1" :language="es" v-model="hasta"></vuejs-datepicker>
+              
+                                      </div>
+              
+                                  </div>
+                              </div>
+              
+                          </div>
+                          <div class="modal-footer">
+                         
+                          <button type="button" class="btn btn-primary" v-on:click="reporteSeguimiento">Consultar</button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>

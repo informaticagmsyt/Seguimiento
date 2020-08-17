@@ -697,8 +697,8 @@ var app = new Vue({
     reporteSeguimiento: function () {
      
 
-      
-      location.href='SeguimientoController/exportarExcel?desde='+  this.formatFecha(this.desde) +'&hasta='+this.formatFecha(this.hasta);
+    
+      location.href=urlBase+'index.php/SeguimientoController/exportarExcel?desde='+  this.formatFecha(this.desde) +'&hasta='+this.formatFecha(this.hasta);
     },
     getGraficas: async function (
       fecha,

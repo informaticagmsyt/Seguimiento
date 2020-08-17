@@ -40,6 +40,7 @@
 })
 
             var fdesde='<?php if(isset($_GET['desde'] ))  echo $_GET['desde']  ?>';
+            // url base para las consultas
             var urlBase ="<?php echo  base_url()?>"
            
             </script>

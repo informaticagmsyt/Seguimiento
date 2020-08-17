@@ -68,9 +68,16 @@
 
                                     <?php } ?>
                                     <li>
-                                        <a href="<?php echo  base_url()?>index.php/listaseguimiento" > Lista</a>
+                                        <a href="<?php echo  base_url()?>index.php/listaseguimiento" > Listado de precios</a>
                                     </li>
-                                  
+                                    
+                                    <?php if($_SESSION["perfil"]=="administrador" || $_SESSION["perfil"]=="coord. monitor"){ ?> 
+
+                                    <li>
+                                    <a href="#" onclick="$('#modalexportar').modal('show')"> Exportar datos</a>
+                                    </li>
+
+                                    <?php } ?>
                                   
                                 </ul>
                             </li>

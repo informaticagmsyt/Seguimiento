@@ -53,7 +53,7 @@
         //if(isset($_GET['desde'] ) != null){ 
         ?>
 
-        <button class="btn btn-primary" onclick="$('#modalperiodo').modal('show')">Exportar Excel</button>
+        <!--button class="btn btn-primary" onclick="$('#modalperiodo').modal('show')">Exportar Excel</button-->
 
         <?php
         // }
@@ -186,7 +186,7 @@
     </div>
 </div>
 
-<!-- Modal -->
+<!-- Modal >
 <div class="modal fade" id="modalperiodo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <form action="<?php echo base_url(); ?>index.php/SeguimientoController/exportarExcel" method="get">
@@ -234,4 +234,4 @@
             </div>
         </form>
     </div>
-</div>
+</div-->
