@@ -3,7 +3,7 @@
 class Export_excel{
 
     function to_excel($array, $filename) {
-        header('Content-Disposition: attachment; filename='.$filename.'.xlsx');
+        header('Content-Disposition: attachment; filename='.$filename.'.xls');
         header('Content-type: application/force-download');
         header('Content-Transfer-Encoding: binary');
         header('Pragma: public');
